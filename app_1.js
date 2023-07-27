@@ -1,7 +1,7 @@
-'use strict'
-// 1. Задача про обчислення різниці часу
+// 'use strict'
+// // 1. Задача про обчислення різниці часу
 
-function durationBetweenDates(startDate, endDate, timeFrame) {
+function durationBetweenDates(startDate = '01 Jan 1970', endDate = '24 Feb 2022', timeFrame = 'days') {
     let diff = Math.abs(new Date(endDate) - new Date(startDate));
     let seconds = diff/1000;
     let minutes = seconds / 60;
@@ -23,3 +23,4 @@ else{
   }
 console.log(durationBetweenDates('02 Aug 1985', '03 Aug 1985', 'seconds'));
 console.log(durationBetweenDates('31 Jan 2022', '03 Feb 2021', 'days'));
+  
