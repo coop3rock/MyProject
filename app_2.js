@@ -1,20 +1,14 @@
 'use strict'
 
-// //   2. Задача про перетворення об'єкту
+//  2. Задача на використання замикання.
+//  Напишіть функцію яка працює таким чином: multiply(a)(b) // a * b
 
-const priceData = {
-   Apples: '23.4',
-   BANANAS: '48',
-   oRAngGEs: '48.7584',
-   };
-   
-   function optimizer(data) {
-      const newObj = Object.fromEntries(
-         Object.entries(data).map(([key, value]) => [key.toLowerCase(), Number(value).toFixed(2)])
-       )
-       return newObj;
-   };
-   
-   let updatedPriceData = optimizer(priceData);
-   
-   console.log(updatedPriceData);
+console.log(multiply(5)(5))		
+console.log(multiply(2)(-2))	      
+console.log(multiply(4)(3))		
+
+function multiply(a) {
+	return function(b){
+      return a*b;
+   }
+}

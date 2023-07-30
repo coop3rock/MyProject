@@ -1,26 +1,17 @@
-// 'use strict'
-// // 1. Задача про обчислення різниці часу
+'use strict'
+// 1. Напишіть функцію addThemAll
+// Вона буде знаходити суму усіх своїх аргументів незалежно від їх кількості (але без використання вбудованого об'єкту Math).
+// Використайте оператор розширення
 
-function durationBetweenDates(startDate = '01 Jan 1970', endDate = '24 Feb 2022', timeFrame = 'days') {
-    let diff = Math.abs(new Date(endDate) - new Date(startDate));
-    let seconds = diff/1000;
-    let minutes = seconds / 60;
-    let hours = minutes / 60;
-    let days = hours / 24;
+console.log(addThemAll(2,4));
+console.log(addThemAll(1,2,3,4)); 
+console.log(addThemAll(5,5,10)); 
 
-if(timeFrame==='seconds'){
-    return seconds+' seconds';
-}
-if(timeFrame==='minutes'){
-  return minutes+' minutes';
-}
-if(timeFrame==='hours'){
-  return hours+' hours';
-}
-else{
-  return Math.round (days)+' day';
-}
-  }
-console.log(durationBetweenDates('02 Aug 1985', '03 Aug 1985', 'seconds'));
-console.log(durationBetweenDates('31 Jan 2022', '03 Feb 2021', 'days'));
+
+function addThemAll(...args) {
+    let sum = 0;
   
+    for (let num of args) sum += num;
+  
+    return sum;
+  }

@@ -1,15 +1,13 @@
 'use strict'
 
-// //   4. Задача про ітерацію
-    
+//  4. Напишіть функцію яка відфільтрує масив унікальних значень
 
-function iterativeOddSumTo(number) {
-  let sum = 0;
-  for(let i=0; i<=number; i++){
-    if (i%2 !== 0){
-    sum += i;
-  }}
-  return sum;
+ 
+const userNames = ['Петро', 'Емма', 'Петро', 'Емма', 'Марта', 'Яна', 'Василь', 'Антон', 'Олена', 'Емма'];
 
-  }
-console.log(iterativeOddSumTo(5))
+function filterUnique(array) {
+ const uniqueNames = Array.from(new Set(userNames));
+ return uniqueNames;
+}
+
+console.log(filterUnique(userNames)); 
