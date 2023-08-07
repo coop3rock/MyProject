@@ -1,14 +1,17 @@
 'use strict'
 
-//  2. Задача на використання замикання.
-//  Напишіть функцію яка працює таким чином: multiply(a)(b) // a * b
+// 2. Напишіть функцію detonatorTimer(delay) використовуючи вкладений setTimeout  
 
-console.log(multiply(5)(5))		
-console.log(multiply(2)(-2))	      
-console.log(multiply(4)(3))		
+// Вона виводить в консоль число кожну секунду, починаючи з delay (ціле число) і в кінці замість 0 виведе 'BOOM!'
 
-function multiply(a) {
-	return function(b){
-      return a*b;
-   }
+detonatorTimer(3);
+
+function detonatorTimer(delay) {
+	if (delay > 0) {
+    console.log(delay);
+    delay --;
+    setTimeout(detonatorTimer, 1000, delay);
+  } else if(delay === 0) {
+    console.log('BOOM!');
+  }
 }

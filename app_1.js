@@ -1,17 +1,19 @@
 'use strict'
-// 1. Напишіть функцію addThemAll
-// Вона буде знаходити суму усіх своїх аргументів незалежно від їх кількості (але без використання вбудованого об'єкту Math).
-// Використайте оператор розширення
+// // 1. Напишіть функцію detonatorTimer(delay) використовуючи setInterval  
 
-console.log(addThemAll(2,4));
-console.log(addThemAll(1,2,3,4)); 
-console.log(addThemAll(5,5,10)); 
+// // Вона виводить в консоль число кожну секунду, починаючи з delay (ціле число) і в кінці замість 0 виведе 'BOOM!'
 
+detonatorTimer(3);
 
-function addThemAll(...args) {
-    let sum = 0;
-  
-    for (let num of args) sum += num;
-  
-    return sum;
+function detonatorTimer(delay) {
+	const timeoutID = setInterval(countdown,1000)
+  function countdown(){
+    if(delay>0){
+    console.log(delay)
+    delay--};
+    if (delay===0){
+      clearInterval(timeoutID);
+      console.log('BOOM!')
+    }
   }
+}

@@ -1,48 +1,43 @@
-'use strict'
+"use strict";
 
-// 3. Напишіть функцію яка буде використовуватись для сортування масиву фільмів
-//    Функція буде приймати два аргумента:
-//    — властивість за якою треба посортувати. 
-//    — опцію напрямку сортування (зростання чи спадання)
+// 3. Напишіть об'єкт в якому опишіть свої довільні властивості та довільні методи що ці властивості виводять. 
 
-const movies = [
-	{
-		movieName: 'The Thing',
-		releaseYear: 1982,
-		directedBy: 'Carpenter',
-		runningTimeInMinutes: 109,
+
+let me = {
+	name: 'Dmytro',
+	residency: 'Kyiv',
+	gender: 'male',
+	born: 1985,
+	age: 37,
+	occupation: {
+		1: 'sales manager',
+		2: 'economist',
+		3: 'bank manager',
+		4: 'manager at a car service station',
+		5: 'barthender',
+		6: 'self employed',
+		7: 'coffee roast master',
 	},
-	{
-		movieName: 'Aliens',
-		releaseYear: 1986,
-		directedBy: 'Cameron',
-		runningTimeInMinutes: 137,
+	hobby: 'driving',
+	introduce() {
+		console.log(`My name is ${this.name} and I was born in ${this.born} year. I live in ${this.residency} all my life.`);
 	},
-	{
-		movieName: 'Men in Black',
-		releaseYear: 1997,
-		directedBy: 'Sonnenfeld',
-		runningTimeInMinutes: 98,
+	profession() {
+		console.log(`I have had many jobs in my life. Such as:`);
+		Object.keys(this.occupation).forEach(key => {
+		console.log(`${this.occupation[key]}`);
+	});
 	},
-	{
-		movieName: 'Predator',
-		releaseYear: 1987,
-		directedBy: 'McTiernan',
-		runningTimeInMinutes: 107,
-	},
-];
+	describeMyHobby(){
+		Object.values(this).forEach(value => {
+		if(value===this.hobby){
+	console.log('My hobby is ' + value +'.');}
+	});
+		
+	}
+	}
 
-console.log(movies.toSorted(byProperty('releaseYear', '>'))); 
-// виведе масив фільмів посортованих по року випуску, від старішого до новішого
-console.log(movies.toSorted(byProperty('runningTimeInMinutes', '<'))); 
-// виведе масив фільмів посортованих по їх тривалості, від найдовшого до найкоротшого
-console.log(movies.toSorted(byProperty( 'movieName', '>'))); 
-// виведе масив фільмів посортованих по назві, в алфавітному порядку
-
-function byProperty(property, direction) {
-   if(direction==='>') return (a,b) => a[property] > b[property] ? 1 : -1;
-   else return (a,b) => b[property] > a[property] ? 1 : -1;
-    }
-
-
+me.introduce();
+me.profession();
+me.describeMyHobby();
 
