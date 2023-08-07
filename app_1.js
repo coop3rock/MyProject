@@ -10,8 +10,9 @@ function detonatorTimer(delay) {
   function countdown(){
     if(delay>0){
     console.log(delay)
-    delay--};
-    if (delay===0){
+    delay--;
+  }
+    else if (delay===0){
       clearInterval(timeoutID);
       console.log('BOOM!')
     }
