@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fff;
+}
+
+body.dark {
+    background: #303330;
+    color: #fff;
+}
+
+
+button{
+    font-size: 50px;
+    padding: 20px;
+    border: none;
+    background: #fff;
+    box-shadow: 0 0 10px silver;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+} 
+
+button:hover{
+    box-shadow: 0 0 30px silver;
+}
+
+button:active{
+    box-shadow: 0 0 10px silver;
+}
+
+#dateHistory{
+    padding-top: 20px;
+}
