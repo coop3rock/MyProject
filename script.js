@@ -8,7 +8,7 @@ toggleThemeBtn.addEventListener('click', () => {
 
 
 function lastTimeClick() {
-    if ("lastData" in localStorage) document.getElementById("dateHistory").innerHTML = 'Last turn on: '+ localStorage.lastData;
+    if ("lastData" in localStorage) document.getElementById("dateHistory").innerHTML = 'Last turn off: '+ localStorage.lastData;
     dateHistory.innerText = document.body.classList.contains('dark')?"Last turn off: " + localStorage.lastData : "Last turn on: "+ localStorage.lastData;
    };
 
@@ -27,13 +27,14 @@ function formatTime(){
         return num < 10? `0${num}` : num;
 }
 };
-localStorage.setItem('lastData', lastTimeClick());
+// localStorage.setItem('lastData', lastTimeClick());
 function init() {
-    toggleThemeBtn.addEventListener('click', () => {document.getElementById("dateHistory").innerHTML = formatTime();
+    
+    toggleThemeBtn.addEventListener('click', () => {localStorage.setItem('lastData', formatTime());
     lastTimeClick();
     
-    localStorage.lastData = formatTime()
 })
+    lastTimeClick()
 };
 
 init();
