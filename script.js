@@ -27,7 +27,7 @@ function formatTime(){
         return num < 10? `0${num}` : num;
 }
 };
-
+localStorage.setItem('lastData', formatTime());
 function init() {
     toggleThemeBtn.addEventListener('click', () => {document.getElementById("dateHistory").innerHTML = formatTime();
     lastTimeClick();
@@ -37,7 +37,7 @@ function init() {
 };
    
 init();
-
+localStorage.setItem('theme', "light");
 if(!localStorage.theme) localStorage.theme = "light"
 document.body.className = localStorage.theme
 toggleThemeBtn.innerText = document.body.classList.contains('dark')?"TURN ON":"TURN OFF"
