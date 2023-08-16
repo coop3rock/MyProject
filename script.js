@@ -27,7 +27,7 @@ function formatTime(){
         return num < 10? `0${num}` : num;
 }
 };
-// localStorage.setItem('lastData', lastTimeClick());
+
 function init() {
     
     toggleThemeBtn.addEventListener('click', () => {localStorage.setItem('lastData', formatTime());
