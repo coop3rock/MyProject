@@ -37,7 +37,7 @@ function init() {
 };
    
 init();
-localStorage.setItem('theme', "light");
+
 if(!localStorage.theme) localStorage.theme = "light"
 document.body.className = localStorage.theme
 toggleThemeBtn.innerText = document.body.classList.contains('dark')?"TURN ON":"TURN OFF"
