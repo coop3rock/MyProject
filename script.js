@@ -42,7 +42,7 @@ init();
 if(!localStorage.theme) localStorage.theme = "light"
 document.body.className = localStorage.theme
 toggleThemeBtn.innerText = document.body.classList.contains('dark')?"TURN ON":"TURN OFF"
-dateHistory.innerText = document.body.classList.contains('dark')?"Last turn on: " + localStorage.lastData : "Last turn off: "+ localStorage.lastData;
+dateHistory.innerText = document.body.classList.contains('dark')?"Last turn off: " + localStorage.lastData : "Last turn on: "+ localStorage.lastData;
 
 
  
