@@ -27,15 +27,15 @@ function formatTime(){
         return num < 10? `0${num}` : num;
 }
 };
-localStorage.setItem('lastData', formatTime());
+localStorage.setItem('lastData', lastTimeClick());
 function init() {
     toggleThemeBtn.addEventListener('click', () => {document.getElementById("dateHistory").innerHTML = formatTime();
     lastTimeClick();
+    
     localStorage.lastData = formatTime()
 })
-    lastTimeClick()
 };
-   
+
 init();
 
 if(!localStorage.theme) localStorage.theme = "light"
