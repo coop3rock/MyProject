@@ -8,8 +8,8 @@ toggleThemeBtn.addEventListener('click', () => {
 
 
 function lastTimeClick() {
-    if ("lastData" in localStorage) document.getElementById("dateHistory").innerHTML = 'Last turn off: '+ localStorage.lastData;
-    dateHistory.innerText = document.body.classList.contains('dark')?"Last turn on: " + localStorage.lastData : "Last turn off: "+ localStorage.lastData;
+    if ("lastData" in localStorage) document.getElementById("dateHistory").innerHTML = 'Last turn on: '+ localStorage.lastData;
+    dateHistory.innerText = document.body.classList.contains('dark')?"Last turn off: " + localStorage.lastData : "Last turn on: "+ localStorage.lastData;
    };
 
 function formatTime(){
